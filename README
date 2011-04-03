@@ -1,0 +1,4 @@
+This is an example of hosting the standard VS editor inside of a VS tool window. It is intended only to show the concept not do anything
+terribly interesting. It is intended as an example not a copy/paste source. If anything is not clear please ask questions here or on the
+MSDN forums (http://social.msdn.microsoft.com/Forums/en-US/vsx/threads) as there is enough cargo-cult programming in the world, no need 
+to add to it.
