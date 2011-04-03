@@ -1,4 +1,19 @@
-This is an example of hosting the standard VS editor inside of a VS tool window. It is intended only to show the concept not do anything
+This is an example of hosting the standard VS editor inside of a VS tool window. It is intended only to show the concept, not do anything
 terribly interesting. It is intended as an example not a copy/paste source. If anything is not clear please ask questions here or on the
 MSDN forums (http://social.msdn.microsoft.com/Forums/en-US/vsx/threads) as there is enough cargo-cult programming in the world, no need 
 to add to it.
+
+To use:
+
+1:  Open ToolWindowHostedEditorExample\ToolWindowHostedEditor\ToolWindowHostedEditor.csproj.user and change the install location of VS in that
+file (in the StartProgram tag) to point to wherever you have VS installed, otherwise F5 on the project won't work.
+
+2:  Make sure you have the VS SDK installed or else VS won't recognize the project type and you will be missing necessary targets files.
+
+3:  Load the solution in VS, press F5 to start debugging, when the new instance of VS is launched load a solution, go to the solution 
+explorer, right click on a file and choose 'Open In Embedded Editorz!!' from the context menu.
+
+
+Feel free to contact me here (or the forums) with bugs, but as I said this is an example and not terribly strenuously tested, so I am sure
+there are bugs, I may or may not fix them depending on how horrid they are (as I said this isn't intended to be used in your  shipping
+product / extension as is).

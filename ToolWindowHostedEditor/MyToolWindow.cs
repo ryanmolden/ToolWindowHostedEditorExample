@@ -85,6 +85,17 @@ namespace ToolWindowHostedEditor
                 //Create a code window adapter.
                 this.codeWindow = editorAdapterFactoryService.CreateVsCodeWindowAdapter(OleServiceProvider);
 
+                //Disable the splitter control on the editor as leaving it enabled causes a crash if the user
+                //tries to use it here :(
+                IVsCodeWindowEx codeWindowEx = (IVsCodeWindowEx)this.codeWindow;
+                INITVIEW[] initView = new INITVIEW[1];
+                codeWindowEx.Initialize((uint)_codewindowbehaviorflags.CWB_DISABLESPLITTER,
+                                         VSUSERCONTEXTATTRIBUTEUSAGE.VSUC_Usage_Filter,
+                                         szNameAuxUserContext:  "",
+                                         szValueAuxUserContext: "",
+                                         InitViewFlags: 0,
+                                         pInitView: initView);
+
                 //Associate our IVsTextLines with our new code window.
                 ErrorHandler.ThrowOnFailure(this.codeWindow.SetBuffer((IVsTextLines)docData));
 
